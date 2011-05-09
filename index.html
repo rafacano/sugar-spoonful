@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+
+  <title>rafacano/sugar-spoonful @ GitHub</title>
+
+  <style type="text/css">
+    body {
+      margin-top: 1.0em;
+      background-color: #358fc7;
+      font-family: Helvetica, Arial, FreeSans, san-serif;
+      color: #000000;
+    }
+    #container {
+      margin: 0 auto;
+      width: 700px;
+    }
+    h1 { font-size: 3.8em; color: #ca7038; margin-bottom: 3px; }
+    h1 .small { font-size: 0.4em; }
+    h1 a { text-decoration: none }
+    h2 { font-size: 1.5em; color: #ca7038; }
+    h3 { text-align: center; color: #ca7038; }
+    a { color: #ca7038; }
+    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+    .download { float: right; }
+    pre { background: #000; color: #fff; padding: 15px;}
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .footer { text-align:center; padding-top:30px; font-style: italic; }
+  </style>
+</head>
+
+<body>
+  <a href="http://github.com/rafacano/sugar-spoonful"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+
+  <div id="container">
+
+    <div class="download">
+      <a href="http://github.com/rafacano/sugar-spoonful/zipball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
+      <a href="http://github.com/rafacano/sugar-spoonful/tarball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+    </div>
+
+    <h1><a href="http://github.com/rafacano/sugar-spoonful">sugar-spoonful</a>
+      <span class="small">by <a href="http://github.com/rafacano">rafacano</a></span></h1>
+
+    <div class="description">
+      Small rule based utility to tidy up files (like Mary Poppins singing 'A Spoonful of Sugar').
+    </div>
+
+    <p>Under development.
+
+------------------------------------------------------
+
+
+#it's ruby, so you can define variables
+shared_dir = 'home/rafa/shared'
+
+#each directory to be checked is a source
+#you can declare as much as you want
+source '/home/rafa/downloads'
+source shared_dir
+
+#you define rules to apply to files
+#rules defined at root level are applied globally to all sources
+#if a file validates a rule, the file will be moved to the :target directory
+rule :pdfs, :extensions=>'pdf', :target=>'/home/rafa/docs'
+
+#you can define rulesets, to be reused lately
+ruleset 'videos' do
+  rule :avi, :extensions=>'avi,mp4', :target=>'/home/rafa/tmp'
+end
+
+#you can create block sources where you can define your own sets of rules 
+#or import global rulesets
+#by default block sources dont use the root(global) scope
+source '/home/rafa/videos' do
+  use_ruleset 'videos' #previous ruleset
+end
+
+#local rule files
+#you will be allowed to place a .sugar file in target directories with its own bunch of rules for subsequent rule matchings</p><h2>Dependencies</h2>
+<p>No dependencies.</p>
+<h2>Authors</h2>
+<p>Me.</p>
+<h2>Contact</h2>
+<p>Rafael Cano (rafa.cano@gmail.com)<br/>      </p>
+
+
+    <h2>Download</h2>
+    <p>
+      You can download this project in either
+      <a href="http://github.com/rafacano/sugar-spoonful/zipball/master">zip</a> or
+      <a href="http://github.com/rafacano/sugar-spoonful/tarball/master">tar</a> formats.
+    </p>
+    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+      by running:
+      <pre>$ git clone git://github.com/rafacano/sugar-spoonful</pre>
+    </p>
+
+    <div class="footer">
+      get the source code on GitHub : <a href="http://github.com/rafacano/sugar-spoonful">rafacano/sugar-spoonful</a>
+    </div>
+
+  </div>
+
+  
+</body>
+</html>
