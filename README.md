@@ -28,7 +28,10 @@ Each directory to be checked is a source. You can declare as much as you want
 You define rules to apply to files. Rules defined at root level are applied globally to all sources.
 If a file validates a rule, the file will be moved to the :target directory
 
-    rule :pdfs, :extensions=>'pdf', :target=>'/home/rafa/docs'
+    rule :pdfs, :extensions=>'pdf', :start_with=>'web', :target=>'/home/rafa/docs'
+    rule :zips, :extensions=>'zip, rar, gz', :size_min=>'10M', :target=>'/home/rafa/tmp'
+
+Besides extension and file name you will be able to check file date, size, etc.
 
 You can define named rulesets, to be reused lately.
 
