@@ -1,4 +1,4 @@
-sugar-spoonful
+sugar-spoonful (UNDER DEVELOPMENT)
 ====
 
 Small rule based utility to tidy up files (like Mary Poppins singing 'A Spoonful of Sugar').
